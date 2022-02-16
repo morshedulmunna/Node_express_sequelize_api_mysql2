@@ -7,7 +7,7 @@ const app = express();
 var corOption = {
   origin: "http://localhost:8081",
 };
-// middlewares====
+// middlewares =====
 app.use(cors(corOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,15 +17,16 @@ app.use(express.urlencoded({ extended: true }));
 const router = require("./routes/productRouter.js");
 app.use("/api/products", router);
 
-// testing Api
+// testing Api =====
 app.get("/", (req, res) => {
+  // console.log("Get Accept");
   res.json({ message: "Hello From Api" });
 });
 
-// Port
+// Port =====
 const PORT = process.env.PORT || 8080;
 
-//server
+//server ====
 app.listen(PORT, () => {
   console.log(`server is running port ${PORT}`);
 });

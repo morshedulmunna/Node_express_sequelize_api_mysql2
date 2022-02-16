@@ -4,9 +4,14 @@ const { Product } = require("../models/productModel.js");
 
 // main workflow
 
+//
+//
+//
+//
 // 1. create product
-
 const addProduct = async (req, res) => {
+  console.log(req.body);
+
   let info = {
     title: req.body.title,
     price: req.body.price,
@@ -20,6 +25,7 @@ const addProduct = async (req, res) => {
 
 // 2. get all products
 const getAllProducts = async (req, res) => {
+  // console.log("Munna");
   let products = await Product.findAll({});
   res.send(products);
   res.status(200).send(products);
@@ -29,6 +35,8 @@ const getAllProducts = async (req, res) => {
 // 3. get single product
 const getOneProduct = async (req, res) => {
   let id = req.params.id;
+  console.log(id);
+
   let products = await Product.findOne({ where: { id: id } });
   res.status(200).send(products);
   //   console.log(products);
