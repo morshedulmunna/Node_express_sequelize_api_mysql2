@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     rating: {
       type: DataTypes.FLOAT,
     },
+    satisfiction: {
+      type: DataTypes.FLOAT,
+    },
     description: {
       type: DataTypes.TEXT,
     },
